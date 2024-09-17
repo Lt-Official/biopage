@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>†††saint†††</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .custom-card {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .custom-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .glitch {
+            position: relative;
+            color: #00ff00;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            color: #00ff00;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+            clip: rect(0, 0, 0, 0);
+            animation: glitch-anim 1s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            animation-delay: 0.1s;
+            clip: rect(10px, 9999px, 100px, 0);
+        }
+        @keyframes glitch-anim {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-10px, 10px); }
+        }
+        .hover-effect:hover {
+            color: #32cd32;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-900 overflow-hidden text-gray-100">
+    <canvas id="matrix-canvas" class="fixed inset-0"></canvas>
+    <div class="absolute inset-0 flex flex-col items-center justify-center">
+        <div id="portfolio" class="custom-card max-w-3xl p-10 mx-4 md:mx-auto my-6 bg-opacity-70">
+            <h1 class="glitch mb-6" data-text="St">St</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="relative w-full h-72 mx-auto overflow-hidden rounded-full shadow-lg border border-gray-700">
+                    <img src="123.jpg" alt="Profile Picture" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-filter duration-500 ease-in-out transform transition-transform hover:scale-110">
+                    <div class="absolute inset-0 bg-blue-900 opacity-75 flex items-center justify-center text-sm font-bold transform -translate-y-full transition-transform duration-500 ease-in-out group-hover:translate-y-0 cursor-pointer">
+                        > Access Data
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-center">
+                    <p class="text-lg mb-4">
+                        <strong>Contact:</strong>
+                        <a href="https://t.me/comslave" class="hover-effect">t.me/comslave</a>
+                    </p>
+                    <p class="text-lg mb-4">
+                    </p>
+                    <p class="text-lg mb-4">
+                        <strong>Skills:</strong>
+                        <ul class="list-disc pl-5">
+                            <li>csharp developer</li>
+                            <li>Learning HTML, CSS, PHP</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center text-gray-400">
+        <div class="bubble-cloud flex justify-center space-x-4">
+            <div class="bubble px-4 py-2 bg-gray-800 rounded-lg">/meowbin</div>
+            <div class="bubble px-4 py-2 bg-gray-800 rounded-lg">/identify</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
